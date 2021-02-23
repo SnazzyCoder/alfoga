@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<form method="POST">
+    <label class="form-label" for="link-input">Enter the URL to shorten below..</label>
+    <input class="form-control" type="url" id="link-input" name="URL" title="Enter a valid URL starting with protocol" required>
+    <button class="btn btn-primary" type="submit" onclick="console.log(document.querySelector('#link-input').value)">Shorten URL!</button>
+</form>
+
+{% if short %}
+    <h2>Your shortened url is:</h2>
+    <code class="short" id="short">{{ short }}</code>
+    <button class="btn btn-secondary" onclick="copy()"><i class="bi bi-clipboard"></i></button>
+{% endif %}
+
+<script>
+    function copy() {
+
+        var copyText = document.getElementById("short");
+
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
+        
+        /* Alert the copied text */
+        alert("Copied the text: " + copyText.value);
+    }
+</script>
+{% endblock %}
