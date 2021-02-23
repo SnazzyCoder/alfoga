@@ -10,7 +10,7 @@
 
 {% if short %}
     <h2>Your shortened url is:</h2>
-    <code class="short" id="short">{{ short }}</code>
+    <a href="https://127.0.0.1:5000/{{ short }}"><code class="short" id="short">https://127.0.0.1:5000/{{ short }}</code></a>
     <button class="btn btn-secondary" onclick="copy()"><i class="bi bi-clipboard"></i></button>
 {% endif %}
 
