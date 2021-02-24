@@ -10,11 +10,12 @@
 
 {% if short %}
     <h2>Your shortened url is:</h2>
-    <a href="https://127.0.0.1:5000/{{ short }}"><code class="short" id="short">https://127.0.0.1:5000/{{ short }}</code></a>
+    <a href="/{{ short }}"><code class="short" id="short">{{ request.url }}/{{ short }}</code></a>
     <button class="btn btn-secondary" onclick="copy()"><i class="bi bi-clipboard"></i></button>
 {% endif %}
 
 <script>
+
     function copy() {
 
         var copyText = document.getElementById("short");
