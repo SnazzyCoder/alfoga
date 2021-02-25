@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% import 'components.html' as cp %}
+
+{% block body %}
+
+    {% call cp.login() %}
+    {% endcall %}
+
+    <a href="#" onclick="signOut();">Sign out</a>
+
+    
+{% endblock %}

@@ -2,11 +2,14 @@
 
 {% block body %}
 
-<form method="POST">
-    <label class="form-label" for="link-input">Enter the URL to shorten below..</label>
-    <input class="form-control" type="url" id="link-input" name="URL" title="Enter a valid URL starting with protocol" required>
-    <button class="btn btn-primary" type="submit" onclick="console.log(document.querySelector('#link-input').value)">Shorten URL!</button>
-</form>
+<div CLASS="wrapper">
+    <form method="POST">
+        <label class="form-label" for="link-input">Enter the URL to shorten below..</label>
+        <input class="form-control" type="url" id="link-input" name="URL" title="Enter a valid URL starting with protocol" required>
+        <button class="btn btn-primary" type="submit" onclick="console.log(document.querySelector('#link-input').value)">Shorten URL!</button>
+    </form>
+    <a href="/login" class="btn"></a>
+</div>
 
 {% if short %}
     <h2>Your shortened url is:</h2>
